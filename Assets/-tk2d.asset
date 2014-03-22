@@ -25,6 +25,10 @@ MonoBehaviour:
     dataGUID: 
     managed: 0
     loadable: 0
+  - assetGUID: 17733aa1c1437cf4ba5869029a429fe0
+    dataGUID: 
+    managed: 0
+    loadable: 0
   fontIndex:
   - assetGUID: 063b15d80dbb4604d890600a64c79cf8
     dataGUID: e7a6b09a73c6b2b4f8060096ddbd3b5e
@@ -696,17 +700,62 @@ MonoBehaviour:
     spriteCollectionGUID: bcd8de8f1e1a6b54d840cf70c0985df9
     spriteCollectionDataGUID: a0d68f525ef47094fa550266d9f075ed
     spriteNames:
-    - Seed
-    - BG
-    - BGPink
+    - Background1
+    - Seed-Right2
+    - Seed-Right2-Opt2
+    - birdLG
+    - Seed-Left2-Opt2
+    - Seed-Left2
+    - Seed-Left1
+    - Seed-Right1
+    - Seed-Idle
+    - birdLG-Flap
+    - birdSM
+    - birdSM-Flap
+    - Wind1
+    - Wind3
+    - Wind2
+    - Wind3-Left
+    - Wind2-Left
+    - Wind1-Left
     spriteTextureGUIDs:
-    - a07215cf7aaf58149aca08d632b4bbec
-    - d408d2f47b1309a4198f76379332aa5a
-    - 2593b7a48275d794abdeb759cfa083aa
+    - 51bc3968a4b40124a9827d4d22281927
+    - 10436263c0f1c5b429b9f0d1e63b9c42
+    - d2600694d0253af4e8ee95d3f1333285
+    - 993088459d850a4438adecc92b8b2316
+    - 860a394ee22f0d441a8b5df0cb130a03
+    - 9be7c45ca8581294db4d4b36490074ea
+    - a09abc947a0a74a439a7e11fad7077ff
+    - f29d1f417a908414da6753a69a45567e
+    - f40192d69b4d0ba44ad23b8231672411
+    - ef340d0098f1df14d95dfb85420a7933
+    - 475231ee3d292f94bbdb4537750df530
+    - abf45d09b37f88a49b7b616a16f5d55f
+    - b8c57f214891d7941a9959026eabf253
+    - cb8461545d5a2c24f852fed9ce065237
+    - ea8dc1865f5258449917ee4bdaa6d1f7
+    - 50d96c341013cd94fad762bb3f7794df
+    - 99ed8924881327444ae6c1bf13b7966c
+    - fd496ed02f28b8e4ca2af9ed4cf40221
     spriteTextureTimeStamps:
-    - 1395425969
-    - 1395425949
-    - 1395427752
+    - 1395435749
+    - 1395435235
+    - 1395439453
+    - 1395432293
+    - 1395435367
+    - 1395434994
+    - 1395434899
+    - 1395435186
+    - 1395435046
+    - 1395436085
+    - 1395436215
+    - 1395436306
+    - 1395441649
+    - 1395441591
+    - 1395441640
+    - 1395442392
+    - 1395442374
+    - 1395442354
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

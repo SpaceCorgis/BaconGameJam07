@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
-	public GameObject bird;
+	public GameObject birdSM;
+	public GameObject birdLG;
 	public float timerStart = 1.5f;
-	public float birdSpeed = -0.5f;
+	public float birdSpeedSM = -1f;
+	public float birdSpeedLG = -1;
 	private float timer;
 	Vector2 spawnLocation;
 	// Use this for initialization
@@ -15,14 +17,29 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timer -= Time.deltaTime;
-		if(timer <= 0)
+		if(ScoreKeeper.SpawnBirds)
 		{
-			spawnLocation = new Vector2(Random.Range(-0.5f, 0.5f),1);
+			timer -= Time.deltaTime;
+			if(timer <= 0)
+			{
+				spawnLocation = new Vector2(Random.Range(-0.4f, 0.4f),1);
 
-			GameObject spawnedBird = (GameObject)Instantiate(bird, spawnLocation, Quaternion.identity);
-			spawnedBird.rigidbody2D.velocity = new Vector2(0,birdSpeed);
-			timer = timerStart;
+				GameObject spawnedBird;
+				int randBird = Random.Range(1,3);
+				if(randBird == 1)
+				{
+					spawnedBird = (GameObject)Instantiate(birdSM, spawnLocation, Quaternion.identity);
+					spawnedBird.rigidbody2D.velocity = new Vector2(0,birdSpeedSM);
+				}
+				else
+				{
+					spawnedBird = (GameObject)Instantiate(birdLG, spawnLocation, Quaternion.identity);
+					spawnedBird.rigidbody2D.velocity = new Vector2(0,birdSpeedLG);
+				}
+
+
+				timer = timerStart;
+			}
 		}
 	
 	}
