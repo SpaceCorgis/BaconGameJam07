@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class OnClick : MonoBehaviour {
@@ -9,6 +9,8 @@ public class OnClick : MonoBehaviour {
 	public GameObject windRightObject;
 	public tk2dSpriteAnimator windLeft;
 	public GameObject windLeftObject;
+	public AudioClip[] windSFX = new AudioClip[5];
+
 	// Use this for initialization
 	void Start () {
 		windRightObject.SetActive(false);
@@ -22,6 +24,11 @@ public class OnClick : MonoBehaviour {
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
+				int windSFXLength = windSFX.Length;
+				int randIndex = Random.Range(0,windSFXLength);
+				var selectedWindSFX = windSFX[randIndex];
+				audio.PlayOneShot(selectedWindSFX);
+
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				var point = ray.GetPoint(1).x;
 				if(point > 0)
