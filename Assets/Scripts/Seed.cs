@@ -7,7 +7,6 @@ public class Seed : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sfxPlayer = GameObject.Find("SFXPlayer").GetComponent<SFXPlayer>();
-	
 	}
 	
 	// Update is called once per frame

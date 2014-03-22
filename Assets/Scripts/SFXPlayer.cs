@@ -10,7 +10,6 @@ public class SFXPlayer : MonoBehaviour {
 	void Start () {
 		//levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 		DontDestroyOnLoad(gameObject);
-	
 	}
 	
 	// Update is called once per frame

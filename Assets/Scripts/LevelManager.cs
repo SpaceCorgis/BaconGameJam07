@@ -4,9 +4,9 @@ using System.Collections;
 public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	[SerializeField] public string GameType ;
+	public MusicPlayer musicPlayer;
 	void Start () {
 		DontDestroyOnLoad(gameObject);
-	
 	}
 	
 	// Update is called once per frame
@@ -25,11 +25,13 @@ public class LevelManager : MonoBehaviour {
 					var point = ray.GetPoint(1).x;
 					if(point > 0)
 					{
+						musicPlayer.PlayMusic();
 						GameType = "Birds";
 						Application.LoadLevel("Game");
 					}
 					else
 					{
+						musicPlayer.PlayMusic();
 						GameType = "Trees";
 						Application.LoadLevel("Game");
 					}

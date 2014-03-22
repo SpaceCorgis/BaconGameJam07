@@ -15,7 +15,6 @@ public class OnClick : MonoBehaviour {
 	void Start () {
 		windRightObject.SetActive(false);
 		windLeftObject.SetActive(false);
-	
 	}
 	
 	// Update is called once per frame
