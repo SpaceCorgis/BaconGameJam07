@@ -5,6 +5,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public static int Score {get ; set;}
 	public static int Best = 0;
 	public static bool SpawnBirds;
+	public static bool canScore;
 	private bool gameStart;
 	public tk2dTextMesh currentScore;
 	public tk2dTextMesh bestScore;
@@ -12,6 +13,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public GameObject StartObject;
 	// Use this for initialization
 	void Start () {
+		canScore = true;
 		gameStart = true;
 		SpawnBirds = false;
 		if(PlayerPrefs.HasKey("Best"))
@@ -29,6 +31,7 @@ public class ScoreKeeper : MonoBehaviour {
 			{
 				StartObject.SetActive(false);
 				SpawnBirds = true;
+				canScore = true;
 			}
 		}
 		if(Score >= Best)
@@ -42,6 +45,8 @@ public class ScoreKeeper : MonoBehaviour {
 
 	public static void GameOver()
 	{
+		canScore = false;
+		Score = 0;
 		PlayerPrefs.SetInt("Best", Best);
 		SpawnBirds = false;
 		Application.LoadLevel("Game");

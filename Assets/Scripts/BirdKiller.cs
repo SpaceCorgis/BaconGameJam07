@@ -16,6 +16,9 @@ public class BirdKiller : MonoBehaviour {
 	void OnBecameInvisible()
 	{
 		DestroyObject(gameObject);
-		ScoreKeeper.Score += 1;
+		if(ScoreKeeper.canScore)
+		{
+			ScoreKeeper.Score += 1;
+		}
 	}
 }
