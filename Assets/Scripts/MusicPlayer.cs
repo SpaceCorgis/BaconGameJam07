@@ -6,6 +6,10 @@ public class MusicPlayer : MonoBehaviour {
 	// Use this for initialization
 	public static bool MusicPlaying = false;
 	void Start () {
+		if(MusicPlaying)
+		{
+			Destroy(gameObject);
+		}
 		DontDestroyOnLoad(gameObject);
 		if(!MusicPlaying)
 		{

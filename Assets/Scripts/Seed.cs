@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Seed : MonoBehaviour {
 	public tk2dSpriteAnimator _anim;
+	public SFXPlayer sfxPlayer;
 	// Use this for initialization
 	void Start () {
+		sfxPlayer = GameObject.Find("SFXPlayer").GetComponent<SFXPlayer>();
 	
 	}
 	
@@ -29,6 +31,13 @@ public class Seed : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Bird")
 		{
+			sfxPlayer.playDeath();
+			DestroyObject(gameObject);
+			ScoreKeeper.GameOver();
+		}
+		if(collision.gameObject.tag == "Tree")
+		{
+			sfxPlayer.playDeath();
 			DestroyObject(gameObject);
 			ScoreKeeper.GameOver();
 		}
@@ -36,6 +45,7 @@ public class Seed : MonoBehaviour {
 
 	void OnBecameInvisible()
 	{
+		sfxPlayer.playDeath();
 		ScoreKeeper.GameOver();
 		DestroyObject(gameObject);
 	}
