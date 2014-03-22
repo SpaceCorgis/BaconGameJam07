@@ -7,7 +7,8 @@ public class ScoreKeeper : MonoBehaviour {
 	public static int BestTrees = 0;
 	public static bool SpawnBirds;
 	public static bool canScore;
-	private bool gameStart;
+	public bool gameStart;
+	public bool gameEnd;
 	public tk2dTextMesh currentScore;
 	public tk2dTextMesh bestScore;
 	public tk2dTextMesh startText;
@@ -17,6 +18,7 @@ public class ScoreKeeper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+		Score = 0;
 		canScore = true;
 		gameStart = true;
 		SpawnBirds = false;
@@ -37,9 +39,47 @@ public class ScoreKeeper : MonoBehaviour {
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				var xpoint = ray.GetPoint(1).x;
+				var ypoint = ray.GetPoint(1).y;
+				//Debug.Log(xpoint);
+				//Debug.Log(ypoint);
+				if(xpoint <= -0.3875 && ypoint >= 0.64375)
+				{
+					Debug.Log("hit back");
+					Application.LoadLevel("Select");
+					return;
+				}
+			}
+			if(Input.GetMouseButtonDown(0))
+			{
 				StartObject.SetActive(false);
 				SpawnBirds = true;
 				canScore = true;
+				gameStart = false;
+			}
+		}
+		if(gameEnd)
+		{
+			if(Input.GetMouseButtonDown(0))
+			{
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				var xpoint = ray.GetPoint(1).x;
+				var ypoint = ray.GetPoint(1).y;
+				//Debug.Log(xpoint);
+				//Debug.Log(ypoint);
+				if(xpoint <= -0.3875 && ypoint >= 0.64375)
+				{
+					//Debug.Log("hit back");
+					Application.LoadLevel("Select");
+					return;
+				}
+			}
+			if(Input.GetMouseButtonDown(0))
+			{
+				Score = 0;
+				gameEnd = false;
+				Application.LoadLevel("Game");
 			}
 		}
 		if(levelManager.GameType == "Birds")
@@ -63,13 +103,17 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	}
 
-	public static void GameOver()
+	public void GameOver()
 	{
+		gameEnd = true;
+		startText.text = "Replay?";
+		StartObject.SetActive(true);
 		canScore = false;
-		Score = 0;
+		//Score = 0;
 		PlayerPrefs.SetInt("Best", Best);
 		PlayerPrefs.SetInt("BestTrees", BestTrees);
 		SpawnBirds = false;
-		Application.LoadLevel("Title");
+
+		//Application.LoadLevel("Title");
 	}
 }

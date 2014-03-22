@@ -4,9 +4,11 @@ using System.Collections;
 public class Seed : MonoBehaviour {
 	public tk2dSpriteAnimator _anim;
 	public SFXPlayer sfxPlayer;
+	public ScoreKeeper scoreKeeper;
 	// Use this for initialization
 	void Start () {
 		sfxPlayer = GameObject.Find("SFXPlayer").GetComponent<SFXPlayer>();
+		scoreKeeper = GameObject.Find("Managers").GetComponent<ScoreKeeper>();
 	}
 	
 	// Update is called once per frame
@@ -32,20 +34,25 @@ public class Seed : MonoBehaviour {
 		{
 			sfxPlayer.playDeath();
 			DestroyObject(gameObject);
-			ScoreKeeper.GameOver();
+			DestroyObject(collision.gameObject);
+			scoreKeeper.GameOver();
 		}
 		if(collision.gameObject.tag == "Tree")
 		{
 			sfxPlayer.playDeath();
 			DestroyObject(gameObject);
-			ScoreKeeper.GameOver();
+			DestroyObject(collision.gameObject);
+			scoreKeeper.GameOver();
 		}
 	}
 
 	void OnBecameInvisible()
 	{
-		sfxPlayer.playDeath();
-		ScoreKeeper.GameOver();
-		DestroyObject(gameObject);
+		if(!scoreKeeper.gameStart && !scoreKeeper.gameEnd)
+		{
+			sfxPlayer.playDeath();
+			scoreKeeper.GameOver();
+			DestroyObject(gameObject);
+		}
 	}
 }

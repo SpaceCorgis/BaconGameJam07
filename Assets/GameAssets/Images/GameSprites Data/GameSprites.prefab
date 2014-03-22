@@ -1034,7 +1034,7 @@ MonoBehaviour:
     polygonCollider2D: []
     edgeCollider2D: []
     attachPoints: []
-  - name: TitleScreen
+  - name: TitleScreen-Opt2
     boundsData:
     - {x: 0, y: 0, z: 0}
     - {x: 1, y: 1.5, z: 0}
@@ -1057,13 +1057,55 @@ MonoBehaviour:
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: dd5e1ed7d8ef44640a5685a7c8661118, type: 2}
     materialId: 0
-    sourceTextureGUID: b2e4ec1b577388745bf4d61783fc3e69
+    sourceTextureGUID: 32a2aea9a4a6aab47b3ec7f27035b596
     extractRegion: 0
     regionX: 0
     regionY: 0
     regionW: 0
     regionH: 0
     flipped: 1
+    complexGeometry: 0
+    physicsEngine: 1
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Back-Arrow
+    boundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: .099999994, y: .099999994, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: .099999994, y: .099999994, z: 0}
+    texelSize: {x: .00999999978, y: .00999999978}
+    positions:
+    - {x: -.049999997, y: -.049999997, z: 0}
+    - {x: .049999997, y: -.049999997, z: 0}
+    - {x: -.049999997, y: .049999997, z: 0}
+    - {x: .049999997, y: .049999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .761722684, y: .246095702}
+    - {x: .800777316, y: .246095702}
+    - {x: .761722684, y: .265623033}
+    - {x: .800777316, y: .265623033}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: dd5e1ed7d8ef44640a5685a7c8661118, type: 2}
+    materialId: 0
+    sourceTextureGUID: ac34ba012edf4444eb4a7da8a33d2a44
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
     complexGeometry: 0
     physicsEngine: 1
     colliderType: 0
@@ -1093,7 +1135,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 2
   halfTargetHeight: 50
-  buildKey: 1298121828
+  buildKey: 357016843
   dataGuid: a0d68f525ef47094fa550266d9f075ed
   managedSpriteCollection: 0
   hasPlatformData: 0

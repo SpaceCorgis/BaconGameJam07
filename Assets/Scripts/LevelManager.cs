@@ -35,7 +35,6 @@ public class LevelManager : MonoBehaviour {
 						GameType = "Trees";
 						Application.LoadLevel("Game");
 					}
-					Debug.Log(GameType);
 				}
 			}
 			else if(Application.loadedLevelName == "Game")
